@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Hermanos | Distribuidora de Fiambres, Quesos y Lácteos · Córdoba</title>
+<meta name="description" content="Distribuidora mayorista de fiambres, quesos y lácteos en Córdoba. Atención directa, precios mayoristas y reparto diario para autoservicios, fiambrerías y gastronómicos.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans:   ['Inter', 'sans-serif'],
+        script: ['"Dancing Script"', 'cursive'],
+      },
+      colors: {
+        brand: {
+          950: '#0F1F16',
+          900: '#1A3318',
+          800: '#2C5A26',
+          700: '#386B31',
+          600: '#4A8040',
+          500: '#5E9A54',
+          400: '#7AB56E',
+          gold: '#C9A83A',
+          red:  '#BD2020',
+        }
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%':   { opacity: '0', transform: 'translateY(22px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+  .hide-scroll::-webkit-scrollbar { display:none }
+  .hide-scroll { -ms-overflow-style:none; scrollbar-width:none }
+
+  /* Logo img */
+  .logo-img {
+    object-fit: contain;
+    flex-shrink: 0;
+    /* subtle drop shadow so el logo resalta sobre fondo oscuro */
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.40));
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg,
+      rgba(26,51,24,0.94) 0%,
+      rgba(26,51,24,0.72) 50%,
+      rgba(26,51,24,0.90) 100%);
+  }
+
+  .cat-card {
+    background: #2C5A26;
+    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .cat-card:hover {
+    background: #386B31;
+    transform: translateY(-5px);
+    box-shadow: 0 24px 48px rgba(26,51,24,0.40);
+  }
+
+  /* Barra de acento — dorado del borde del óvalo del logo */
+  .gold-bar {
+    width: 44px; height: 3px;
+    background: #C9A83A;
+    border-radius: 2px;
+  }
+
+  /* Badge "Distribuidora · Córdoba" con separador dorado */
+  .hero-badge {
+    border-color: rgba(201,168,58,0.35);
+    background: rgba(44,90,38,0.50);
+  }
+
+  @keyframes pulse-wa {
+    0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+    50%      { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+  }
+  .pulse-wa { animation: pulse-wa 2.4s infinite; }
+  .nav-shadow { box-shadow: 0 4px 30px rgba(0,0,0,.18); }
+</style>
+</head>
+
+<body class="font-sans text-stone-800 bg-white antialiased">
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav id="navbar" class="fixed w-full top-0 z-50 bg-brand-900 border-b border-white/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-[180px]">
+
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center flex-shrink-0">
+        <img src="logo%20LosHermanos%20mejorado%28version1%29.png"
+             alt="Los Hermanos"
+             class="logo-img"
+             style="height:180px;width:auto;">
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#inicio"    class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Inicio</a>
+        <a href="#productos" class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Productos</a>
+        <a href="#nosotros"  class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Nosotros</a>
+        <a href="#contacto"  class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Contacto</a>
+      </div>
+
+      <!-- CTA + burger -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20solicitar%20informaci%C3%B3n"
+           target="_blank" rel="noopener"
+           class="pulse-wa hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold tracking-wide rounded-xl transition-all">
+          <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
+          Pedir por WhatsApp
+        </a>
+        <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+           class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl border border-white/15 hover:border-brand-gold/50 hover:bg-white/5 transition-all"
+           title="Instagram @los.hermanoscba">
+          <iconify-icon icon="skill-icons:instagram" width="18" height="18"></iconify-icon>
+        </a>
+        <button id="menu-btn" class="md:hidden p-2 text-white/70 hover:text-white transition-colors">
+          <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-nav" class="hidden md:hidden pb-5 pt-4 border-t border-white/10 flex flex-col gap-3">
+      <a href="#inicio"    class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Inicio</a>
+      <a href="#productos" class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Productos</a>
+      <a href="#nosotros"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Nosotros</a>
+      <a href="#contacto"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Contacto</a>
+      <a href="https://wa.me/5493512193827" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 text-white text-sm font-bold rounded-xl w-fit transition-all">
+        <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
+        Pedir por WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-900">
+  <div class="absolute inset-0 z-0">
+    <img src="imagenes/img-picada3.jpg"
+         alt="Fiambres y quesos" class="w-full h-full object-cover">
+    <div class="absolute inset-0" style="background: linear-gradient(rgba(10,40,20,0.65), rgba(10,40,20,0.65));"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-28">
+
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-8 animate-fade-up" style="animation-delay:.1s">
+      <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
+      <span class="text-[11px] font-semibold text-white/90 tracking-widest uppercase">Distribuidora Mayorista · Córdoba</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white mb-5 max-w-4xl leading-[1.08] animate-fade-up" style="animation-delay:.2s; text-shadow: 0 2px 16px rgba(0,0,0,0.50);">
+      Fiambres, quesos y lácteos
+      <span class="block font-normal text-3xl sm:text-4xl md:text-5xl mt-3 leading-snug" style="color: rgba(255,255,255,0.85);">
+        para comercios que buscan<br class="hidden sm:block"> calidad y buen abastecimiento
+      </span>
+    </h1>
+
+    <p class="text-sm md:text-base text-white/65 mb-10 max-w-xl font-light animate-fade-up" style="animation-delay:.3s">
+      Atención mayorista directa · Variedad de productos · Reparto en Córdoba y zona
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay:.4s">
+      <a href="#productos"
+         class="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
+        Ver categorías
+        <iconify-icon icon="solar:arrow-down-linear" width="17" height="17"></iconify-icon>
+      </a>
+      <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hablar%20con%20ventas"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-white border border-white/25 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm">
+        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+        Hablar con ventas
+      </a>
+    </div>
+
+    <!-- Social handle bajo CTAs -->
+    <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 mt-8 text-white/40 hover:text-white/80 transition-colors animate-fade-up"
+       style="animation-delay:.55s">
+      <iconify-icon icon="skill-icons:instagram" width="16" height="16"></iconify-icon>
+      <span class="text-xs font-medium tracking-wide">@los.hermanoscba</span>
+    </a>
+  </div>
+
+  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+    <iconify-icon icon="solar:mouse-minimalistic-linear" width="22" height="22"></iconify-icon>
+  </div>
+</section>
+
+<!-- ═══════════════════ STATS BAR ═══════════════════ -->
+<div class="bg-brand-800 border-y border-brand-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-brand-700/60">
+      <div class="py-7 px-5 text-center">
+        <p class="text-2xl font-bold text-white">+15 años</p>
+        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">De trayectoria</p>
+      </div>
+      <div class="py-7 px-5 text-center">
+        <p class="text-2xl font-bold text-white">+500</p>
+        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Clientes activos</p>
+      </div>
+      <div class="py-7 px-5 text-center">
+        <p class="text-2xl font-bold text-white">Diario</p>
+        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Reparto garantizado</p>
+      </div>
+      <div class="py-7 px-5 text-center">
+        <p class="text-2xl font-bold text-white">+200</p>
+        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Productos disponibles</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ NOSOTROS ═══════════════════ -->
+<section id="nosotros" class="py-24 lg:py-32 bg-stone-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+
+      <!-- Images collage -->
+      <div class="relative lg:col-span-3">
+        <!-- Acento verde decorativo detrás del collage -->
+        <div class="absolute -inset-4 bg-brand-500/8 rounded-3xl -z-10 blur-2xl"></div>
+
+        <div class="grid grid-cols-2 gap-3">
+
+          <!-- Columna izquierda -->
+          <div class="flex flex-col gap-3">
+            <!-- Jamón — imagen destacada, ring verde -->
+            <div class="relative rounded-2xl overflow-hidden h-[320px] shadow-lg ring-2 ring-brand-500/30">
+              <img src="imagenes/img-jamon1.jpg" alt="Fiambres" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2">
+                <iconify-icon icon="solar:star-bold" width="15" height="15" class="text-brand-gold"></iconify-icon>
+                <span class="text-white text-xs font-semibold">Selección premium</span>
+              </div>
+            </div>
+            <!-- Lácteos -->
+            <div class="relative rounded-2xl overflow-hidden h-[210px] shadow-md">
+              <img src="imagenes/lecheimg.jpg" alt="Lácteos" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                <iconify-icon icon="solar:snowflake-bold" width="15" height="15" class="text-brand-700"></iconify-icon>
+                <span class="text-brand-900 text-xs font-semibold">Siempre frescos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna derecha (offset hacia abajo) -->
+          <div class="flex flex-col gap-3 mt-8">
+            <!-- Queso -->
+            <div class="relative rounded-2xl overflow-hidden h-[210px] shadow-md">
+              <img src="imagenes/imgqueso.jpg" alt="Quesos" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                <iconify-icon icon="solar:layers-minimalistic-bold" width="15" height="15" class="text-brand-700"></iconify-icon>
+                <span class="text-brand-900 text-xs font-semibold">Variedad de quesos</span>
+              </div>
+            </div>
+            <!-- Fábrica -->
+            <div class="relative rounded-2xl overflow-hidden h-[320px] shadow-lg">
+              <img src="imagenes/dirFabrica.jpg" alt="Distribuidora" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2">
+                <iconify-icon icon="solar:tag-price-bold" width="15" height="15" class="text-brand-gold"></iconify-icon>
+                <span class="text-white text-xs font-semibold">Precio de fábrica</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="lg:col-span-2">
+        <div class="gold-bar mb-5"></div>
+        <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Quiénes somos</span>
+        <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-stone-900 mb-5 leading-tight">
+          Tradición y surtido<br>para tu negocio
+        </h2>
+        <p class="text-stone-600 text-base mb-4 leading-relaxed">
+          Los Hermanos es una distribuidora con años de presencia en el mercado cordobés, especializada en fiambres, quesos y productos lácteos. Trabajamos con autoservicios, fiambrerías, despensas y negocios gastronómicos.
+        </p>
+        <p class="text-stone-600 text-base mb-8 leading-relaxed">
+          Nuestro compromiso es claro: variedad de productos, atención personalizada y reparto confiable para que tu comercio nunca se quede sin stock.
+        </p>
+        <div class="grid grid-cols-2 gap-3 pt-6 border-t border-stone-100">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:delivery-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            </div>
+            <span class="text-sm font-medium text-stone-700">Reparto a domicilio</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:tag-price-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            </div>
+            <span class="text-sm font-medium text-stone-700">Precios mayoristas</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:phone-calling-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            </div>
+            <span class="text-sm font-medium text-stone-700">Atención directa</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:star-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            </div>
+            <span class="text-sm font-medium text-stone-700">Productos de primera</span>
+          </div>
+        </div>
+
+        <!-- Instagram CTA inline -->
+        <div class="mt-8 pt-6 border-t border-stone-100">
+          <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-3 group">
+            <div class="w-9 h-9 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-700 transition-colors flex-shrink-0">
+              <iconify-icon icon="skill-icons:instagram" width="18" height="18"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-sm font-bold text-stone-900 leading-tight group-hover:text-brand-700 transition-colors">Mirá nuestro día a día</p>
+              <p class="text-xs text-stone-400">@los.hermanoscba en Instagram</p>
+            </div>
+            <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-stone-300 group-hover:text-brand-600 group-hover:translate-x-1 transition-all ml-1"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CATEGORÍAS ═══════════════════ -->
+<section id="productos" class="py-24 lg:py-32 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="flex justify-center mb-5"><div class="gold-bar"></div></div>
+      <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Lo que ofrecemos</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-stone-900 mb-3">Nuestras categorías</h2>
+      <p class="text-stone-500 text-sm">Surtido completo para fiambrerías, autoservicios, despensas y gastronómicos.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Fiambres -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer">
+        <div class="relative h-48 overflow-hidden">
+          <img src="imagenes/img-jamon4.jpg"
+               alt="Fiambres" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Fiambres</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Mortadelas, salames, jamones, paletas y cortes especiales para todo tipo de comercio.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20fiambres"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
+            Consultar disponibilidad
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quesos -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer">
+        <div class="relative h-48 overflow-hidden">
+          <img src="imagenes/img-quesos2.jpg"
+               alt="Quesos" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Quesos</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Cremosos, port salut, sardo, reggianito. Por horma o fraccionado.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20quesos"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
+            Consultar disponibilidad
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Lácteos -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
+               alt="Lácteos" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Lácteos</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Leches, yogures, cremas, manteca y dulce de leche. Marcas líderes y opciones económicas.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20l%C3%A1cteos"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
+            Consultar disponibilidad
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Para fiambrerías -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer">
+        <div class="relative h-48 overflow-hidden">
+          <img src="imagenes/imgGondolaSuper.jpg"
+               alt="Otros comercios" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Otros comercios</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Surtido completo para puestos y locales. Volúmenes mayoristas con atención directa y personalizada.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20tengo%20una%20fiambrer%C3%ADa%20y%20quiero%20consultar"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
+            Consultar disponibilidad
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Enlatados -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer">
+        <div class="relative h-48 overflow-hidden">
+          <img src="imagenes/img-conservasVS.jpg"
+               alt="Enlatados y conservas" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Enlatados y conservas</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Aceitunas, pickles, conservas y productos complementarios para completar el surtido.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20enlatados"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
+            Consultar disponibilidad
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Promociones — acento rojo controlado -->
+      <div class="cat-card rounded-2xl overflow-hidden group cursor-pointer ring-2 ring-brand-red/30">
+        <div class="relative h-48 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=800&q=80"
+               alt="Promociones" class="w-full h-full object-cover opacity-65 group-hover:scale-105 group-hover:opacity-75 transition-all duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent"></div>
+          <span class="absolute top-4 right-4 bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
+            Ofertas
+          </span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Promociones semanales</h3>
+          <p class="text-brand-400 text-sm leading-relaxed">Cada semana nuevas ofertas en productos seleccionados. Consultanos por WhatsApp para los precios del momento.</p>
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20ver%20las%20promociones%20de%20la%20semana"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-1.5 text-white text-xs font-bold mt-4 transition-colors">
+            Ver promociones
+            <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ INSTAGRAM STRIP ═══════════════════ -->
+<div class="bg-brand-900 border-t border-brand-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <iconify-icon icon="skill-icons:instagram" width="22" height="22"></iconify-icon>
+        <div>
+          <p class="text-white text-sm font-bold leading-tight">Seguinos en Instagram</p>
+          <p class="text-brand-400 text-xs">Novedades, ofertas y productos de temporada</p>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-5 py-2 rounded-xl border border-brand-gold/40 hover:border-brand-gold text-brand-gold hover:bg-brand-gold/10 text-xs font-bold tracking-wide transition-all whitespace-nowrap">
+        <iconify-icon icon="skill-icons:instagram" width="15" height="15"></iconify-icon>
+        @los.hermanoscba
+        <iconify-icon icon="solar:arrow-right-linear" width="13" height="13"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ PARA QUIÉN ═══════════════════ -->
+<section class="py-20 bg-stone-50 border-t border-stone-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 mb-3">¿Para quién trabajamos?</h2>
+      <p class="text-stone-500 text-sm">Atendemos a todo comercio que necesite surtido confiable y atención directa.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
+          <iconify-icon icon="solar:shop-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
+        </div>
+        <p class="font-semibold text-stone-900 text-sm">Autoservicios</p>
+        <p class="text-stone-400 text-xs mt-1">y almacenes</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
+          <iconify-icon icon="solar:knife-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
+        </div>
+        <p class="font-semibold text-stone-900 text-sm">Fiambrerías</p>
+        <p class="text-stone-400 text-xs mt-1">y rotiserías</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
+          <iconify-icon icon="solar:chef-hat-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
+        </div>
+        <p class="font-semibold text-stone-900 text-sm">Gastronómicos</p>
+        <p class="text-stone-400 text-xs mt-1">restaurantes y bares</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
+          <iconify-icon icon="solar:buildings-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
+        </div>
+        <p class="font-semibold text-stone-900 text-sm">Despensas</p>
+        <p class="text-stone-400 text-xs mt-1">y mercados</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA BANNER ═══════════════════ -->
+<section class="py-20 bg-brand-800 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-900/60 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-900/50 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
+  </div>
+  <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center">
+    <div class="w-16 h-16 bg-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+      <iconify-icon icon="logos:whatsapp-icon" width="30" height="30"></iconify-icon>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pedinos el catálogo<br>y te asesoramos</h2>
+    <p class="text-white/55 text-sm mb-8 max-w-md mx-auto">
+      Envianos un mensaje por WhatsApp y te mandamos el catálogo actualizado con precios y disponibilidad. Sin compromiso.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20recibir%20el%20cat%C3%A1logo%20de%20productos"
+         target="_blank" rel="noopener"
+         class="pulse-wa inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-900 text-sm font-bold rounded-xl hover:bg-stone-100 transition-all shadow-xl">
+        <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
+        Solicitar catálogo por WhatsApp
+      </a>
+      <a href="https://www.instagram.com/los.hermanoscba"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/25 text-white text-sm font-bold rounded-xl hover:bg-white/10 transition-all">
+        <iconify-icon icon="skill-icons:instagram" width="20" height="20"></iconify-icon>
+        Seguinos en Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONTACTO ═══════════════════ -->
+<section id="contacto" class="py-24 lg:py-32 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+
+      <!-- Mapa (60% = 3/5 cols) -->
+      <div class="lg:col-span-3 flex flex-col gap-4">
+        <div class="rounded-2xl overflow-hidden shadow-md border border-stone-200 h-[420px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.8030477520115!2d-64.2227295!3d-31.474603599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a37972b2f101%3A0x64ca4ea0f02b2754!2sDistribuidora%20Los%20hermanos!5e0!3m2!1ses!2sar!4v1776118474350!5m2!1ses!2sar"
+            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a href="https://share.google/6R894Yx4G92bMQ6ce" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-stone-200 hover:border-brand-600 text-stone-700 hover:text-brand-700 text-sm font-semibold rounded-xl transition-all shadow-sm self-start">
+          <iconify-icon icon="solar:map-point-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
+          Ver en Google Maps
+        </a>
+      </div>
+
+      <!-- Info (40% = 2/5 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-5">
+
+        <!-- Header -->
+        <div>
+          <div class="gold-bar mb-4"></div>
+          <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Contacto y cobertura</span>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 mb-2 leading-tight">Estamos para atenderte</h2>
+          <p class="text-stone-500 text-sm">Respondemos rápido por el canal que prefieras.</p>
+        </div>
+
+        <!-- Canales -->
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+             target="_blank" rel="noopener"
+             class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+            <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
+              <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-xs text-stone-400 mb-0.5">WhatsApp · Respuesta rápida</p>
+              <p class="text-brand-600 font-bold text-sm">+54 9 351 219-3827</p>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/los.hermanoscba"
+             target="_blank" rel="noopener"
+             class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+            <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
+              <iconify-icon icon="skill-icons:instagram" width="22" height="22"></iconify-icon>
+            </div>
+            <div>
+              <p class="text-xs text-stone-400 mb-0.5">Instagram · Seguinos y escribinos</p>
+              <p class="text-brand-600 font-bold text-sm">@los.hermanoscba</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Horario -->
+        <div class="bg-white rounded-xl px-5 py-4 border border-stone-200">
+          <div class="flex items-center gap-2 mb-3">
+            <iconify-icon icon="solar:clock-circle-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
+            <span class="font-bold text-stone-900 text-sm">Horario de atención</span>
+          </div>
+          <div class="space-y-1.5 text-sm text-stone-600">
+            <p><strong class="text-stone-800">Lunes a viernes</strong> — 7:00 a 17:00 hs</p>
+            <p><strong class="text-stone-800">Sábados</strong> — 7:00 a 13:00 hs</p>
+          </div>
+        </div>
+
+        <!-- Cobertura -->
+        <div class="bg-white rounded-xl px-5 py-4 border border-stone-200">
+          <div class="flex items-center gap-2 mb-3">
+            <iconify-icon icon="solar:map-point-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
+            <span class="font-bold text-stone-900 text-sm">Zona de cobertura</span>
+          </div>
+          <ul class="space-y-1.5 text-sm text-stone-600">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-brand-gold rounded-full flex-shrink-0"></span>
+              Córdoba capital y alrededores
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-brand-600 rounded-full flex-shrink-0"></span>
+              Zona norte, sur, este y oeste
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-brand-600 rounded-full flex-shrink-0"></span>
+              Consultar disponibilidad por zona
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+           target="_blank" rel="noopener"
+           class="pulse-wa inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-xl transition-all shadow-md">
+          <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+          Consultar por WhatsApp
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="bg-brand-900 border-t border-brand-800 pt-14 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-brand-800">
+
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="logo-badge text-[12px]">Los<br>Hermanos</span>
+          <div>
+            <p class="text-white text-sm font-bold leading-tight">Los Hermanos</p>
+            <p class="text-brand-400 text-[10px] tracking-wide">Distribuidora · Córdoba</p>
+          </div>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs">
+          Distribuidora de fiambres, quesos y lácteos en Córdoba. Calidad, variedad y atención directa para tu comercio.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-white/35 text-[10px] font-semibold tracking-widest uppercase mb-4">Navegación</p>
+        <ul class="space-y-2.5">
+          <li><a href="#inicio"    class="text-white/55 hover:text-white text-sm transition-colors">Inicio</a></li>
+          <li><a href="#productos" class="text-white/55 hover:text-white text-sm transition-colors">Productos</a></li>
+          <li><a href="#nosotros"  class="text-white/55 hover:text-white text-sm transition-colors">Nosotros</a></li>
+          <li><a href="#contacto"  class="text-white/55 hover:text-white text-sm transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-white/35 text-[10px] font-semibold tracking-widest uppercase mb-4">Contacto rápido</p>
+        <div class="space-y-3.5">
+          <a href="https://wa.me/5493512193827" target="_blank" rel="noopener"
+             class="flex items-center gap-3 text-white/55 hover:text-white transition-colors">
+            <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
+            <span class="text-sm">+54 9 351 219-3827</span>
+          </a>
+          <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+             class="flex items-center gap-3 text-white/55 hover:text-white transition-colors">
+            <iconify-icon icon="skill-icons:instagram" width="17" height="17"></iconify-icon>
+            <span class="text-sm">@los.hermanoscba</span>
+          </a>
+          <a href="https://share.google/6R894Yx4G92bMQ6ce" target="_blank" rel="noopener"
+             class="flex items-center gap-3 text-white/55 hover:text-white transition-colors">
+            <iconify-icon icon="solar:map-point-linear" width="17" height="17"></iconify-icon>
+            <span class="text-sm">Córdoba, Argentina</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/25">
+      <p>© 2025 Los Hermanos. Todos los derechos reservados.</p>
+      <p>Distribuidora de fiambres, quesos y lácteos · Córdoba</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════ FLOATING WhatsApp ═══════════════════ -->
+<a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+   target="_blank" rel="noopener"
+   class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1fba58] rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-110 group pulse-wa">
+  <iconify-icon icon="logos:whatsapp-icon" width="28" height="28"></iconify-icon>
+  <span class="absolute right-16 bg-stone-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
+    Escribinos
+  </span>
+</a>
+
+<!-- ═══════════════════ JS ═══════════════════ -->
+<script>
+  // Mobile menu
+  const btn = document.getElementById('menu-btn');
+  const nav = document.getElementById('mobile-nav');
+  btn?.addEventListener('click', () => nav?.classList.toggle('hidden'));
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.add('hidden')));
+
+  // Navbar shadow on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar?.classList.toggle('nav-shadow', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>

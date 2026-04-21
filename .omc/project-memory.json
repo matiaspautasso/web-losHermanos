@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1776793857838,
+  "projectRoot": "C:\\Users\\matia\\Desktop\\ProyectosMatias\\web-losHermanos",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "browser-sync start --server --files '**/*.html, **/*.css, **/*.js' --port 3000 --no-notify"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "index.html",
+      "accessCount": 33,
+      "lastAccessed": 1776805549700,
+      "type": "file"
+    },
+    {
+      "path": "generated-page.html",
+      "accessCount": 17,
+      "lastAccessed": 1776799000940,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 4,
+      "lastAccessed": 1776796550677,
+      "type": "directory"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 4,
+      "lastAccessed": 1776796973696,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1776796084276,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

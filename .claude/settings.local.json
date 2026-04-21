@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.aura.build)",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_snapshot",
+      "Bash(python -m http.server 8081)",
+      "Bash(python -m http.server 3000)",
+      "Bash(start:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

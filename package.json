@@ -1,0 +1,10 @@
+{
+  "name": "web-los-hermanos",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx browser-sync start --server --files \"*.html\" --port 3000 --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}

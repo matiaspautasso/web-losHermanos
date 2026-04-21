@@ -1,0 +1,302 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Aura Logo" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Aura Logo" [ref=e9]
+        - navigation [ref=e10]:
+          - link "CREATE" [ref=e11] [cursor=pointer]:
+            - /url: /create
+          - link "TEMPLATES" [ref=e12] [cursor=pointer]:
+            - /url: /browse/components
+          - link "COMPONENTS" [ref=e13] [cursor=pointer]:
+            - /url: /components
+          - link "ASSETS" [ref=e14] [cursor=pointer]:
+            - /url: /assets
+          - link "SKILLS" [ref=e15] [cursor=pointer]:
+            - /url: /skills
+          - link "LEARN" [ref=e16] [cursor=pointer]:
+            - /url: /learn/introduction
+          - link "PRICING" [ref=e17] [cursor=pointer]:
+            - /url: /pricing
+          - link "CHANGELOG" [ref=e18] [cursor=pointer]:
+            - /url: /changelog
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - button "Light mode" [ref=e22] [cursor=pointer]:
+              - img [ref=e23]
+            - button "System theme" [ref=e29] [cursor=pointer]:
+              - img [ref=e30]
+            - button "Dark mode" [ref=e32] [cursor=pointer]:
+              - img [ref=e33]
+          - link "SIGN IN" [ref=e35] [cursor=pointer]:
+            - /url: /signin
+            - button "SIGN IN" [ref=e36]
+    - main [ref=e37]:
+      - generic [ref=e47]:
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - img [ref=e51]
+            - textbox "Search 163 templates..." [ref=e349]: Food
+          - generic [ref=e55]:
+            - button "Popular" [ref=e56] [cursor=pointer]:
+              - img [ref=e57]
+              - generic [ref=e58]: Popular
+            - button "Recent" [ref=e59] [cursor=pointer]:
+              - img [ref=e60]
+              - generic [ref=e62]: Recent
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - button "SaaS" [ref=e66] [cursor=pointer]
+            - button "Portfolio" [ref=e67] [cursor=pointer]
+            - button "E-commerce" [ref=e68] [cursor=pointer]
+            - button "Services" [ref=e69] [cursor=pointer]
+            - button "Food" [ref=e70] [cursor=pointer]
+            - button "Real Estate" [ref=e71] [cursor=pointer]
+            - button "Health" [ref=e72] [cursor=pointer]
+            - button "Paid Templates" [ref=e73] [cursor=pointer]
+          - generic [ref=e74]:
+            - button "Mine" [disabled] [ref=e75]
+            - generic [ref=e76]:
+              - button "All Types" [ref=e77] [cursor=pointer]:
+                - img [ref=e78]
+                - generic [ref=e80]: All Types
+                - img [ref=e81]
+              - generic:
+                - menu
+        - generic [ref=e86]:
+          - generic [ref=e351]:
+            - img "Preview for Asian Restaurant Landing Page Template" [ref=e353] [cursor=pointer]
+            - generic [ref=e355]:
+              - paragraph [ref=e357]: Asian Restaurant Landing Page Template
+              - generic [ref=e358]:
+                - link "Ahmed Bouzembrak Ahmed Bouzembrak" [ref=e359] [cursor=pointer]:
+                  - /url: /lavision
+                - generic [ref=e363]
+          - generic [ref=e378]:
+            - img "Preview for flavoring" [ref=e380] [cursor=pointer]
+            - generic [ref=e382]:
+              - paragraph [ref=e384]: flavoring
+              - generic [ref=e385]:
+                - link "김형준 김형준" [ref=e386] [cursor=pointer]:
+                  - /url: /user-2a5392e9
+                - generic [ref=e390]
+          - generic [ref=e405]:
+            - img "Preview for Premium Olive Oil Landing Page Template" [ref=e407] [cursor=pointer]
+            - generic [ref=e409]:
+              - paragraph [ref=e411]: Premium Olive Oil Landing Page Template
+              - generic [ref=e412]:
+                - link "Francisco Dias Francisco Dias" [ref=e413] [cursor=pointer]:
+                  - /url: /user-7a248787
+                - generic [ref=e417]
+          - generic [ref=e432]:
+            - img "Preview for Bakery Landing Page" [ref=e434] [cursor=pointer]
+            - generic [ref=e436]:
+              - paragraph [ref=e438]: Bakery Landing Page
+              - generic [ref=e439]:
+                - link "Bhavish Bhavish" [ref=e440] [cursor=pointer]:
+                  - /url: /user-06d637fd
+                - generic [ref=e444]
+          - generic [ref=e459]:
+            - img "Preview for La vision studio agence marketing web" [ref=e461] [cursor=pointer]
+            - generic [ref=e463]:
+              - paragraph [ref=e465]: La vision studio agence marketing web
+              - generic [ref=e466]:
+                - link "Ahmed Bouzembrak Ahmed Bouzembrak" [ref=e467] [cursor=pointer]:
+                  - /url: /lavision
+                - generic [ref=e471]
+          - generic [ref=e486]:
+            - img "Preview for Restaurant Landing Page Template" [ref=e488] [cursor=pointer]
+            - generic [ref=e490]:
+              - paragraph [ref=e492]: Restaurant Landing Page Template
+              - generic [ref=e493]:
+                - link "KRISHNA VAMSHI R KRISHNA VAMSHI R" [ref=e494] [cursor=pointer]:
+                  - /url: /user-6e5c0e1b
+                - generic [ref=e498]
+          - generic [ref=e513]:
+            - img "Preview for Cafe Landing Page Template" [ref=e515] [cursor=pointer]
+            - generic [ref=e517]:
+              - paragraph [ref=e519]: Cafe Landing Page Template
+              - generic [ref=e520]:
+                - link "F f4ysal" [ref=e521] [cursor=pointer]:
+                  - /url: /f4ysal
+                - generic [ref=e525]
+          - generic [ref=e540]:
+            - img "Preview for Fine Dining Restaurant Landing Page Template" [ref=e542] [cursor=pointer]
+            - generic [ref=e544]:
+              - paragraph [ref=e546]: Fine Dining Restaurant Landing Page Template
+              - generic [ref=e547]:
+                - link "N nia0" [ref=e548] [cursor=pointer]:
+                  - /url: /user-b465a7c6
+                - generic [ref=e552]
+          - generic [ref=e567]:
+            - img "Preview for Luxury Restaurant Landing Page Template" [ref=e569] [cursor=pointer]
+            - generic [ref=e571]:
+              - paragraph [ref=e573]: Luxury Restaurant Landing Page Template
+              - generic [ref=e574]:
+                - link "N nia0" [ref=e575] [cursor=pointer]:
+                  - /url: /user-b465a7c6
+                - generic [ref=e579]
+          - generic [ref=e594]:
+            - img "Preview for Coffee Roastery Landing Page Template" [ref=e596] [cursor=pointer]
+            - generic [ref=e598]:
+              - paragraph [ref=e600]: Coffee Roastery Landing Page Template
+              - generic [ref=e601]:
+                - link "Kova Kova" [ref=e602] [cursor=pointer]:
+                  - /url: /user-d2c0a465
+                - generic [ref=e606]
+          - generic [ref=e621]:
+            - img "Preview for Futuristic Coffee Shop Landing Page Template" [ref=e623] [cursor=pointer]
+            - generic [ref=e625]:
+              - paragraph [ref=e627]: Futuristic Coffee Shop Landing Page Template
+              - generic [ref=e628]:
+                - link "Anas Errouhi Anas Errouhi" [ref=e629] [cursor=pointer]:
+                  - /url: /user-90f35774
+                - generic [ref=e633]
+          - generic [ref=e648]:
+            - img "Preview for Rollicious Website Template" [ref=e650] [cursor=pointer]
+            - generic [ref=e652]:
+              - paragraph [ref=e654]: Rollicious Website Template
+              - generic [ref=e655]:
+                - link "DL Damien Leung" [ref=e656] [cursor=pointer]:
+                  - /url: /user-19cbe960
+                - generic [ref=e660]
+          - generic [ref=e675]:
+            - img "Preview for Restaurant Contact Landing Page Template" [ref=e677] [cursor=pointer]
+            - generic [ref=e679]:
+              - paragraph [ref=e681]: Restaurant Contact Landing Page Template
+              - generic [ref=e682]:
+                - link "N nia0" [ref=e683] [cursor=pointer]:
+                  - /url: /user-b465a7c6
+                - generic [ref=e687]
+          - generic [ref=e702]:
+            - img "Preview for 알룰로스 저당 약과 3조 리푸드랩" [ref=e704] [cursor=pointer]
+            - generic [ref=e706]:
+              - paragraph [ref=e708]: 알룰로스 저당 약과 3조 리푸드랩
+              - generic [ref=e709]:
+                - link "리푸드랩 리푸드랩" [ref=e710] [cursor=pointer]:
+                  - /url: /user-101f768d
+                - generic [ref=e714]
+          - generic [ref=e729]:
+            - img "Preview for Cafe Landing Page Template" [ref=e731] [cursor=pointer]
+            - generic [ref=e733]:
+              - paragraph [ref=e735]: Cafe Landing Page Template
+              - generic [ref=e736]:
+                - link "yash jamage yash jamage" [ref=e737] [cursor=pointer]:
+                  - /url: /user-5a554291
+                - generic [ref=e741]
+          - generic [ref=e756]:
+            - img "Preview for Premium K-Dessert Landing Page Template" [ref=e758] [cursor=pointer]
+            - generic [ref=e760]:
+              - paragraph [ref=e762]: Premium K-Dessert Landing Page Template
+              - generic [ref=e763]:
+                - link "리푸드랩 리푸드랩" [ref=e764] [cursor=pointer]:
+                  - /url: /user-101f768d
+                - generic [ref=e768]
+          - generic [ref=e783]:
+            - img "Preview for Restaurant Landing Page Template" [ref=e785] [cursor=pointer]
+            - generic [ref=e787]:
+              - paragraph [ref=e789]: Restaurant Landing Page Template
+              - generic [ref=e790]:
+                - link "I ilyana" [ref=e791] [cursor=pointer]:
+                  - /url: /user-1fdb69ce
+                - generic [ref=e795]
+          - generic [ref=e810]:
+            - img "Preview for Healthy Meal Delivery Landing Page Template" [ref=e812] [cursor=pointer]
+            - generic [ref=e814]:
+              - paragraph [ref=e816]: Healthy Meal Delivery Landing Page Template
+              - generic [ref=e817]:
+                - link "O othassani2004" [ref=e818] [cursor=pointer]:
+                  - /url: /user-e030f739
+                - generic [ref=e822]
+          - generic [ref=e837]:
+            - img "Preview for Pizza Restaurant Landing Page Template" [ref=e839] [cursor=pointer]
+            - generic [ref=e841]:
+              - paragraph [ref=e843]: Pizza Restaurant Landing Page Template
+              - generic [ref=e844]:
+                - link "J jurre31" [ref=e845] [cursor=pointer]:
+                  - /url: /user-440849dd
+                - generic [ref=e849]
+          - generic [ref=e864]:
+            - img "Preview for Jade Cafe & China Town – Premium Café & Dining in Lake City Lahore" [ref=e866] [cursor=pointer]
+            - generic [ref=e868]:
+              - paragraph [ref=e870]: Jade Cafe & China Town – Premium Café & Dining in Lake City Lahore
+              - generic [ref=e871]:
+                - link "Ahmad Al Ahmad Al" [ref=e872] [cursor=pointer]:
+                  - /url: /user-b69ae0ef
+                - generic [ref=e876]
+    - contentinfo [ref=e243]:
+      - button "Scroll to top" [ref=e244] [cursor=pointer]:
+        - img [ref=e245]
+      - generic [ref=e247]:
+        - generic [ref=e248]:
+          - generic [ref=e249]:
+            - img "Aura Logo" [ref=e251]
+            - paragraph [ref=e252]: AI landing page builder that creates stunning designs in seconds. No design skills needed. Export to HTML & Figma. Trusted by 150,000+ users worldwide.
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - heading "PRODUCT" [level=3] [ref=e255]
+              - list [ref=e256]:
+                - listitem [ref=e257]
+                - listitem [ref=e259]
+                - listitem [ref=e261]
+                - listitem [ref=e263]
+                - listitem [ref=e265]
+                - listitem [ref=e267]
+            - generic [ref=e269]:
+              - heading "RESOURCES" [level=3] [ref=e270]
+              - list [ref=e271]:
+                - listitem [ref=e272]
+                - listitem [ref=e274]
+                - listitem [ref=e276]
+                - listitem [ref=e278]
+                - listitem [ref=e280]
+                - listitem [ref=e282]
+            - generic [ref=e284]:
+              - heading "WHAT WE USE" [level=3] [ref=e285]
+              - list [ref=e286]:
+                - listitem [ref=e287]
+                - listitem [ref=e289]
+                - listitem [ref=e291]
+                - listitem [ref=e293]
+                - listitem [ref=e295]
+                - listitem [ref=e297]
+            - generic [ref=e299]:
+              - heading "CONNECT" [level=3] [ref=e300]
+              - list [ref=e301]:
+                - listitem [ref=e302]
+                - listitem [ref=e304]
+                - listitem [ref=e306]
+                - listitem [ref=e308]
+                - listitem [ref=e310]
+                - listitem [ref=e312]
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - paragraph [ref=e316]:
+              - text: © 2026 Aura. All rights reserved.
+              - link "Made with Cursor" [ref=e317] [cursor=pointer]:
+                - /url: http://designcode.io/cursor
+              - text: .
+            - generic [ref=e318]:
+              - button "Light mode" [ref=e320] [cursor=pointer]:
+                - img [ref=e321]
+              - button "System theme" [ref=e327] [cursor=pointer]:
+                - img [ref=e328]
+              - button "Dark mode" [ref=e330] [cursor=pointer]:
+                - img [ref=e331]
+          - generic [ref=e333]:
+            - link "Twitter" [ref=e334] [cursor=pointer]:
+              - /url: https://x.com/mengto
+              - generic [ref=e335]: Twitter
+              - img [ref=e336]
+            - link "YouTube" [ref=e338] [cursor=pointer]:
+              - /url: https://youtube.com/@designcodeteam
+              - generic [ref=e339]: YouTube
+              - img [ref=e340]
+            - link "LinkedIn" [ref=e343] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/mengto
+              - generic [ref=e344]: LinkedIn
+              - img [ref=e345]
+  - region "Notifications (F8)":
+    - list
