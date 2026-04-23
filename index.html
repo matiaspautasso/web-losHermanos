@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Los Hermanos | Distribuidora de Fiambres, Quesos y Lácteos · Córdoba</title>
 <meta name="description" content="Distribuidora mayorista de fiambres, quesos y lácteos en Córdoba. Atención directa, precios mayoristas y reparto diario para autoservicios, fiambrerías y gastronómicos.">
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="assets/logo%20LosHermanos%20mejorado%28version1%29.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,11 +68,12 @@ tailwind.config = {
   .cat-card {
     background: #2C5A26;
     transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.40);
   }
   .cat-card:hover {
     background: #386B31;
     transform: translateY(-5px);
-    box-shadow: 0 24px 48px rgba(26,51,24,0.40);
+    box-shadow: 0 24px 56px rgba(0,0,0,0.55);
   }
 
   /* Barra de acento — dorado del borde del óvalo del logo */
@@ -92,6 +95,106 @@ tailwind.config = {
   }
   .pulse-wa { animation: pulse-wa 2.4s infinite; }
   .nav-shadow { box-shadow: 0 4px 30px rgba(0,0,0,.18); }
+
+  @media (max-width: 767px) {
+    #navbar .flex.justify-between { height: 56px !important; overflow: hidden; }
+    #navbar .logo-img { height: 44px !important; }
+
+    /* Hero: svh corrige el problema de address-bar en iOS/Android */
+    #inicio { height: 100svh; min-height: 560px; }
+
+    /* Stats bar: padding y tipografía escalados al 80% para reducir altura ~20% */
+    #inicio .absolute.bottom-0 .grid > div { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+    #inicio .absolute.bottom-0 .text-\[14px\] { font-size: 11px; }
+    #inicio .absolute.bottom-0 .text-\[10px\] { font-size: 9px; line-height: 1.35; }
+    #inicio .absolute.bottom-0 .mt-1 { margin-top: 2px; }
+
+    /* Hero content: sube 8px — máximo sin que el texto del badge quede detrás del navbar */
+    #inicio .relative.z-10 { padding-top: 50px; }
+
+    /* Hero text: reduce altura vertical para que los botones quepan sobre la stats bar */
+    #inicio h1 { font-size: 1.875rem; }
+    #inicio h1 span { font-size: 1.25rem; }
+
+    /* ── NOSOTROS mobile ── */
+    #nosotros { padding-top: 2.5rem; padding-bottom: 2.5rem; min-height: 100svh; }
+    #nosotros .text-\[40px\] { font-size: 13px; letter-spacing: 0.12em; }
+    #nosotros h2 { font-size: 1.625rem; }
+    #nosotros .text-lg { font-size: 0.9375rem; line-height: 1.55; }
+    #nosotros .order-2 .grid { grid-template-columns: repeat(2, 1fr); }
+    #nosotros .h-\[384px\] { height: 160px; }
+    #nosotros .h-\[252px\] { height: 120px; }
+    #nosotros .mt-10 { margin-top: 0 !important; }
+    #nosotros .order-3 .pt-8,
+    #nosotros .order-4 .pt-8 { padding-top: 1rem; }
+
+    /* ── PRODUCTOS mobile ── */
+    #productos { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    #productos .mb-14 { margin-bottom: 1.5rem; }
+    #productos .grid-cols-1 { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    #productos .h-48 { height: 105px; }
+    #productos .h-48 img { opacity: 0.8; }
+    #productos .p-6 { padding: 0.625rem; }
+    #productos h3 { font-size: 0.875rem; margin-bottom: 0.2rem; }
+    #productos .p-6 p { font-size: 0.6875rem; line-height: 1.4; }
+    #productos .p-6 > a { margin-top: 0.375rem; font-size: 0.625rem; }
+
+    /* ── CONTACTO mobile ── */
+    #contacto { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  }
+
+  @media (max-width: 639px) {
+    .lg\:col-span-3 .h-\[384px\] { height: 220px; }
+    .lg\:col-span-3 .h-\[252px\] { height: 180px; }
+    .lg\:col-span-3 .mt-10 { margin-top: 0; }
+  }
+
+  /* ── SISTEMA DE FONDO UNIFICADO ── */
+  .parallax-img {
+    filter: brightness(0.78) saturate(0.75);
+    will-change: transform;
+    transform: scale(1.14);
+    transform-origin: center center;
+  }
+
+  /* Overlay con fade oscuro en bordes: crea continuidad entre secciones */
+  .gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(15,31,22,0.94) 0%,
+      rgba(10,25,14,0.62) 16%,
+      rgba(10,25,14,0.62) 84%,
+      rgba(15,31,22,0.94) 100%
+    );
+  }
+
+  /* ── PARALLAX PATTERN (div bg-image) ── */
+  .parallax-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 600px;
+  }
+  .bg-img {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    right: 0;
+    bottom: -20%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    transform: translateY(0);
+  }
+  .section-overlay {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 </style>
 </head>
 
@@ -104,27 +207,27 @@ tailwind.config = {
 
       <!-- Logo -->
       <a href="#inicio" class="flex items-center flex-shrink-0">
-        <img src="logo%20LosHermanos%20mejorado%28version1%29.png"
+        <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
              alt="Los Hermanos"
              class="logo-img"
              style="height:180px;width:auto;">
       </a>
 
       <!-- Desktop nav -->
-      <div class="hidden md:flex items-center gap-7">
-        <a href="#inicio"    class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Inicio</a>
-        <a href="#productos" class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Productos</a>
-        <a href="#nosotros"  class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Nosotros</a>
-        <a href="#contacto"  class="text-xs font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Contacto</a>
+      <div class="hidden md:flex items-center gap-7 ml-10 mr-10">
+        <a href="#inicio"    class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Inicio</a>
+        <a href="#productos" class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Productos</a>
+        <a href="#nosotros"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Nosotros</a>
+        <a href="#contacto"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Contacto</a>
       </div>
 
       <!-- CTA + burger -->
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20solicitar%20informaci%C3%B3n"
+        <a id="wa-nav-btn" href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20solicitar%20informaci%C3%B3n"
            target="_blank" rel="noopener"
-           class="pulse-wa hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold tracking-wide rounded-xl transition-all">
+           class="pulse-wa hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-[15px] font-bold tracking-wide rounded-xl transition-all">
           <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
-          Pedir por WhatsApp
+          <span id="wa-nav-text">Pedir por WhatsApp</span>
         </a>
         <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
            class="hidden sm:flex items-center justify-center w-9 h-9 rounded-xl border border-white/15 hover:border-brand-gold/50 hover:bg-white/5 transition-all"
@@ -143,7 +246,7 @@ tailwind.config = {
       <a href="#productos" class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Productos</a>
       <a href="#nosotros"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Nosotros</a>
       <a href="#contacto"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Contacto</a>
-      <a href="https://wa.me/5493512193827" target="_blank" rel="noopener"
+      <a href="https://wa.me/5493513701881" target="_blank" rel="noopener"
          class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 text-white text-sm font-bold rounded-xl w-fit transition-all">
         <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
         Pedir por WhatsApp
@@ -153,135 +256,159 @@ tailwind.config = {
 </nav>
 
 <!-- ═══════════════════ HERO ═══════════════════ -->
-<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-900">
-  <div class="absolute inset-0 z-0">
-    <img src="imagenes/img-picada3.jpg"
-         alt="Fiambres y quesos" class="w-full h-full object-cover">
-    <div class="absolute inset-0" style="background: linear-gradient(rgba(10,40,20,0.65), rgba(10,40,20,0.65));"></div>
-  </div>
+<section id="inicio" class="parallax-section bg-brand-900" data-parallax data-parallax-speed="0.25">
+  <div class="bg-img" style="background-image: url('imagenes/img-picada3.jpg');"></div>
+  <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
+  <div class="section-overlay">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-[58px] md:pt-[185px]">
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-28">
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-1 sm:mb-8 animate-fade-up" style="animation-delay:.1s">
+        <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
+        <span class="text-[11px] font-semibold text-white/90 tracking-widest uppercase">Distribuidora Mayorista · Córdoba</span>
+      </div>
 
-    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-8 animate-fade-up" style="animation-delay:.1s">
-      <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
-      <span class="text-[11px] font-semibold text-white/90 tracking-widest uppercase">Distribuidora Mayorista · Córdoba</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white mb-1.5 sm:mb-5 max-w-4xl leading-[1.08] animate-fade-up" style="animation-delay:.2s; text-shadow: 0 2px 16px rgba(0,0,0,0.50);">
+        Fiambres, quesos y lácteos
+        <span class="block font-normal text-3xl sm:text-4xl md:text-5xl mt-1 sm:mt-3 leading-snug" style="color: rgba(255,255,255,0.85);">
+          para comercios que buscan<br class="hidden sm:block"> calidad y buen abastecimiento
+        </span>
+      </h1>
+
+      <p class="text-sm md:text-base text-white/65 mb-3 sm:mb-10 max-w-xl font-light animate-fade-up" style="animation-delay:.3s">
+        Atención mayorista directa · Variedad de productos · Reparto en Córdoba y zona
+      </p>
+
+      <div class="flex flex-row gap-3 animate-fade-up" style="animation-delay:.4s">
+        <a href="#productos"
+           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
+          Ver categorías
+          <iconify-icon icon="solar:arrow-down-linear" width="17" height="17"></iconify-icon>
+        </a>
+        <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20hablar%20con%20ventas"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white border border-white/25 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm">
+          <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+          Hablar con ventas
+        </a>
+      </div>
+
+      <!-- Social handle bajo CTAs -->
+      <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
+         class="hidden sm:inline-flex items-center gap-2 mt-8 text-white/40 hover:text-white/80 transition-colors animate-fade-up"
+         style="animation-delay:.55s">
+        <iconify-icon icon="skill-icons:instagram" width="16" height="16"></iconify-icon>
+        <span class="text-xs font-medium tracking-wide">@los.hermanoscba</span>
+      </a>
     </div>
 
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white mb-5 max-w-4xl leading-[1.08] animate-fade-up" style="animation-delay:.2s; text-shadow: 0 2px 16px rgba(0,0,0,0.50);">
-      Fiambres, quesos y lácteos
-      <span class="block font-normal text-3xl sm:text-4xl md:text-5xl mt-3 leading-snug" style="color: rgba(255,255,255,0.85);">
-        para comercios que buscan<br class="hidden sm:block"> calidad y buen abastecimiento
-      </span>
-    </h1>
-
-    <p class="text-sm md:text-base text-white/65 mb-10 max-w-xl font-light animate-fade-up" style="animation-delay:.3s">
-      Atención mayorista directa · Variedad de productos · Reparto en Córdoba y zona
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay:.4s">
-      <a href="#productos"
-         class="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
-        Ver categorías
-        <iconify-icon icon="solar:arrow-down-linear" width="17" height="17"></iconify-icon>
-      </a>
-      <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hablar%20con%20ventas"
-         target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-bold text-white border border-white/25 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm">
-        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-        Hablar con ventas
-      </a>
+    <div class="hidden sm:block absolute bottom-28 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
+      <iconify-icon icon="solar:mouse-minimalistic-linear" width="22" height="22"></iconify-icon>
     </div>
 
-    <!-- Social handle bajo CTAs -->
-    <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
-       class="inline-flex items-center gap-2 mt-8 text-white/40 hover:text-white/80 transition-colors animate-fade-up"
-       style="animation-delay:.55s">
-      <iconify-icon icon="skill-icons:instagram" width="16" height="16"></iconify-icon>
-      <span class="text-xs font-medium tracking-wide">@los.hermanoscba</span>
-    </a>
-  </div>
-
-  <div class="absolute bottom-9 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
-    <iconify-icon icon="solar:mouse-minimalistic-linear" width="22" height="22"></iconify-icon>
+    <!-- ═══════════════════ STATS BAR ═══════════════════ -->
+    <div class="absolute bottom-0 w-full z-10 bg-brand-800 border-t border-brand-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-brand-700/60">
+          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+            <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Atención a medida</p>
+            <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Acompañamiento directo en cada pedido</p>
+          </div>
+          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+            <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Calidad seleccionada</p>
+            <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Productos frescos y de primera línea</p>
+          </div>
+          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+            <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Variedad disponible</p>
+            <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Amplio surtido listo para tu negocio</p>
+          </div>
+          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+            <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Reparto confiable</p>
+            <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Entrega rápida y sin intermediarios</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════ STATS BAR ═══════════════════ -->
-<div class="bg-brand-800 border-y border-brand-700">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-brand-700/60">
-      <div class="py-7 px-5 text-center">
-        <p class="text-2xl font-bold text-white">+15 años</p>
-        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">De trayectoria</p>
-      </div>
-      <div class="py-7 px-5 text-center">
-        <p class="text-2xl font-bold text-white">+500</p>
-        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Clientes activos</p>
-      </div>
-      <div class="py-7 px-5 text-center">
-        <p class="text-2xl font-bold text-white">Diario</p>
-        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Reparto garantizado</p>
-      </div>
-      <div class="py-7 px-5 text-center">
-        <p class="text-2xl font-bold text-white">+200</p>
-        <p class="text-[11px] text-brand-400 mt-1 tracking-widest uppercase">Productos disponibles</p>
-      </div>
+<!-- ═══════════════════ PARALLAX SEPARATOR ═══════════════════ -->
+<section class="parallax-section" data-parallax data-parallax-speed="0.45">
+  <div class="bg-img" style="background-image: url('imagenes/fondo-picada.jpg');"></div>
+  <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
+  <div class="section-overlay">
+    <div class="text-center px-4">
+      <div class="gold-bar mx-auto mb-6"></div>
+      <p class="text-brand-400 font-semibold text-[11px] tracking-widest uppercase mb-4">Los Hermanos</p>
+      <h2 class="font-sans text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
+        Sabores que cuentan una historia
+      </h2>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ═══════════════════ NOSOTROS ═══════════════════ -->
-<section id="nosotros" class="py-24 lg:py-32 bg-stone-50 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+<section id="nosotros" class="relative min-h-[90vh] flex flex-col justify-center py-20 lg:py-28 scroll-mt-20 md:scroll-mt-[180px] overflow-hidden" data-parallax data-parallax-speed="0.25">
+  <div class="bg-img" style="background-image: url('imagenes/img-picada3.jpg');"></div>
+  <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex flex-col lg:grid lg:grid-cols-5 lg:grid-rows-[auto_auto_auto] gap-6 lg:gap-x-20 lg:gap-y-8 items-start">
 
-      <!-- Images collage -->
-      <div class="relative lg:col-span-3">
-        <!-- Acento verde decorativo detrás del collage -->
+      <!-- 1. INTRO — mobile: primero / desktop: col 4-5 fila 1 -->
+      <div class="order-1 lg:col-start-4 lg:col-span-2 lg:row-start-1">
+        <div class="gold-bar mb-6"></div>
+        <span class="text-brand-400 font-semibold text-[40px] tracking-widest uppercase mb-4 block">Quiénes somos</span>
+        <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-white mb-6 leading-tight">
+          Tradición y surtido<br>para tu negocio
+        </h2>
+        <p class="text-white/80 text-lg mb-5 leading-relaxed">
+          Los Hermanos es una distribuidora con años de presencia en el mercado cordobés, especializada en fiambres, quesos y productos lácteos. Trabajamos con autoservicios, fiambrerías, despensas y negocios gastronómicos.
+        </p>
+        <p class="text-white/80 text-lg leading-relaxed">
+          Nuestro compromiso es claro: variedad de productos, atención personalizada y reparto confiable para que tu comercio nunca se quede sin stock.
+        </p>
+      </div>
+
+      <!-- 2. IMAGES — mobile: segundo / desktop: col 1-3 filas 1-3 -->
+      <div class="order-2 lg:col-start-1 lg:col-span-3 lg:row-start-1 lg:row-span-3 relative">
         <div class="absolute -inset-4 bg-brand-500/8 rounded-3xl -z-10 blur-2xl"></div>
-
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
           <!-- Columna izquierda -->
-          <div class="flex flex-col gap-3">
-            <!-- Jamón — imagen destacada, ring verde -->
-            <div class="relative rounded-2xl overflow-hidden h-[320px] shadow-lg ring-2 ring-brand-500/30">
+          <div class="flex flex-col gap-4">
+            <div class="relative rounded-2xl overflow-hidden h-[384px] shadow-lg ring-2 ring-brand-500/30">
               <img src="imagenes/img-jamon1.jpg" alt="Fiambres" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2">
-                <iconify-icon icon="solar:star-bold" width="15" height="15" class="text-brand-gold"></iconify-icon>
-                <span class="text-white text-xs font-semibold">Selección premium</span>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2.5">
+                <iconify-icon icon="solar:star-bold" width="18" height="18" class="text-brand-gold"></iconify-icon>
+                <span class="text-white text-sm font-semibold">Selección premium</span>
               </div>
             </div>
-            <!-- Lácteos -->
-            <div class="relative rounded-2xl overflow-hidden h-[210px] shadow-md">
+            <div class="relative rounded-2xl overflow-hidden h-[252px] shadow-md">
               <img src="imagenes/lecheimg.jpg" alt="Lácteos" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
-                <iconify-icon icon="solar:snowflake-bold" width="15" height="15" class="text-brand-700"></iconify-icon>
-                <span class="text-brand-900 text-xs font-semibold">Siempre frescos</span>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2.5">
+                <iconify-icon icon="solar:snowflake-bold" width="18" height="18" class="text-brand-700"></iconify-icon>
+                <span class="text-brand-900 text-sm font-semibold">Siempre frescos</span>
               </div>
             </div>
           </div>
 
           <!-- Columna derecha (offset hacia abajo) -->
-          <div class="flex flex-col gap-3 mt-8">
-            <!-- Queso -->
-            <div class="relative rounded-2xl overflow-hidden h-[210px] shadow-md">
+          <div class="flex flex-col gap-4 mt-10">
+            <div class="relative rounded-2xl overflow-hidden h-[252px] shadow-md">
               <img src="imagenes/imgqueso.jpg" alt="Quesos" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
-                <iconify-icon icon="solar:layers-minimalistic-bold" width="15" height="15" class="text-brand-700"></iconify-icon>
-                <span class="text-brand-900 text-xs font-semibold">Variedad de quesos</span>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2.5">
+                <iconify-icon icon="solar:layers-minimalistic-bold" width="18" height="18" class="text-brand-700"></iconify-icon>
+                <span class="text-brand-900 text-sm font-semibold">Variedad de quesos</span>
               </div>
             </div>
-            <!-- Fábrica -->
-            <div class="relative rounded-2xl overflow-hidden h-[320px] shadow-lg">
+            <div class="relative rounded-2xl overflow-hidden h-[384px] shadow-lg">
               <img src="imagenes/dirFabrica.jpg" alt="Distribuidora" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent"></div>
-              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2">
-                <iconify-icon icon="solar:tag-price-bold" width="15" height="15" class="text-brand-gold"></iconify-icon>
-                <span class="text-white text-xs font-semibold">Precio de fábrica</span>
+              <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-brand-900/85 backdrop-blur-sm rounded-lg px-4 py-2.5">
+                <iconify-icon icon="solar:tag-price-bold" width="18" height="18" class="text-brand-gold"></iconify-icon>
+                <span class="text-white text-sm font-semibold">Precio de fábrica</span>
               </div>
             </div>
           </div>
@@ -289,73 +416,67 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Text -->
-      <div class="lg:col-span-2">
-        <div class="gold-bar mb-5"></div>
-        <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Quiénes somos</span>
-        <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-stone-900 mb-5 leading-tight">
-          Tradición y surtido<br>para tu negocio
-        </h2>
-        <p class="text-stone-600 text-base mb-4 leading-relaxed">
-          Los Hermanos es una distribuidora con años de presencia en el mercado cordobés, especializada en fiambres, quesos y productos lácteos. Trabajamos con autoservicios, fiambrerías, despensas y negocios gastronómicos.
-        </p>
-        <p class="text-stone-600 text-base mb-8 leading-relaxed">
-          Nuestro compromiso es claro: variedad de productos, atención personalizada y reparto confiable para que tu comercio nunca se quede sin stock.
-        </p>
-        <div class="grid grid-cols-2 gap-3 pt-6 border-t border-stone-100">
+      <!-- 3. BENEFITS — mobile: tercero / desktop: col 4-5 fila 2 -->
+      <div class="order-3 lg:col-start-4 lg:col-span-2 lg:row-start-2">
+        <div class="grid grid-cols-2 gap-4 pt-8 border-t border-white/10">
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
-              <iconify-icon icon="solar:delivery-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            <div class="w-9 h-9 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:delivery-bold" width="17" height="17" class="text-brand-400"></iconify-icon>
             </div>
-            <span class="text-sm font-medium text-stone-700">Reparto a domicilio</span>
+            <span class="text-base font-medium text-white/85">Reparto a domicilio</span>
           </div>
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
-              <iconify-icon icon="solar:tag-price-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            <div class="w-9 h-9 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:tag-price-bold" width="17" height="17" class="text-brand-400"></iconify-icon>
             </div>
-            <span class="text-sm font-medium text-stone-700">Precios mayoristas</span>
+            <span class="text-base font-medium text-white/85">Precios mayoristas</span>
           </div>
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
-              <iconify-icon icon="solar:phone-calling-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            <div class="w-9 h-9 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:phone-calling-bold" width="17" height="17" class="text-brand-400"></iconify-icon>
             </div>
-            <span class="text-sm font-medium text-stone-700">Atención directa</span>
+            <span class="text-base font-medium text-white/85">Atención directa</span>
           </div>
           <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
-              <iconify-icon icon="solar:star-bold" width="15" height="15" class="text-brand-400"></iconify-icon>
+            <div class="w-9 h-9 bg-brand-900 rounded-lg flex items-center justify-center flex-shrink-0">
+              <iconify-icon icon="solar:star-bold" width="17" height="17" class="text-brand-400"></iconify-icon>
             </div>
-            <span class="text-sm font-medium text-stone-700">Productos de primera</span>
+            <span class="text-base font-medium text-white/85">Productos de primera</span>
           </div>
         </div>
+      </div>
 
-        <!-- Instagram CTA inline -->
-        <div class="mt-8 pt-6 border-t border-stone-100">
+      <!-- 4. INSTAGRAM — mobile: cuarto / desktop: col 4-5 fila 3 -->
+      <div class="order-4 lg:col-start-4 lg:col-span-2 lg:row-start-3">
+        <div class="pt-8 border-t border-white/10">
           <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
              class="inline-flex items-center gap-3 group">
             <div class="w-9 h-9 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-700 transition-colors flex-shrink-0">
               <iconify-icon icon="skill-icons:instagram" width="18" height="18"></iconify-icon>
             </div>
             <div>
-              <p class="text-sm font-bold text-stone-900 leading-tight group-hover:text-brand-700 transition-colors">Mirá nuestro día a día</p>
-              <p class="text-xs text-stone-400">@los.hermanoscba en Instagram</p>
+              <p class="text-sm font-bold text-white leading-tight group-hover:text-brand-400 transition-colors">Mirá nuestro día a día</p>
+              <p class="text-xs text-white/50">@los.hermanoscba en Instagram</p>
             </div>
-            <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-stone-300 group-hover:text-brand-600 group-hover:translate-x-1 transition-all ml-1"></iconify-icon>
+            <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-white/30 group-hover:text-brand-400 group-hover:translate-x-1 transition-all ml-1"></iconify-icon>
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════ CATEGORÍAS ═══════════════════ -->
-<section id="productos" class="py-24 lg:py-32 bg-stone-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="productos" class="relative overflow-hidden bg-brand-900 py-24 lg:py-32 scroll-mt-20 md:scroll-mt-[180px]" data-parallax data-parallax-speed="0.45">
+  <div class="bg-img" style="background-image: url('imagenes/fondo-picada.jpg');"></div>
+  <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
       <div class="flex justify-center mb-5"><div class="gold-bar"></div></div>
-      <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Lo que ofrecemos</span>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-stone-900 mb-3">Nuestras categorías</h2>
-      <p class="text-stone-500 text-sm">Surtido completo para fiambrerías, autoservicios, despensas y gastronómicos.</p>
+      <span class="text-brand-400 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Lo que ofrecemos</span>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3">Productos</h2>
+      <p class="text-white/55 text-sm">Surtido completo para fiambrerías, autoservicios, despensas y gastronómicos.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -370,7 +491,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Fiambres</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Mortadelas, salames, jamones, paletas y cortes especiales para todo tipo de comercio.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20fiambres"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20consultar%20por%20fiambres"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
             Consultar disponibilidad
@@ -389,7 +510,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Quesos</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Cremosos, port salut, sardo, reggianito. Por horma o fraccionado.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20quesos"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20consultar%20por%20quesos"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
             Consultar disponibilidad
@@ -408,7 +529,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Lácteos</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Leches, yogures, cremas, manteca y dulce de leche. Marcas líderes y opciones económicas.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20l%C3%A1cteos"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20consultar%20por%20l%C3%A1cteos"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
             Consultar disponibilidad
@@ -427,7 +548,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Otros comercios</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Surtido completo para puestos y locales. Volúmenes mayoristas con atención directa y personalizada.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20tengo%20una%20fiambrer%C3%ADa%20y%20quiero%20consultar"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20tengo%20una%20fiambrer%C3%ADa%20y%20quiero%20consultar"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
             Consultar disponibilidad
@@ -446,7 +567,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Enlatados y conservas</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Aceitunas, pickles, conservas y productos complementarios para completar el surtido.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20consultar%20por%20enlatados"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20consultar%20por%20enlatados"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mt-4 transition-colors">
             Consultar disponibilidad
@@ -468,7 +589,7 @@ tailwind.config = {
         <div class="p-6">
           <h3 class="text-xl font-bold text-white mb-2">Promociones semanales</h3>
           <p class="text-brand-400 text-sm leading-relaxed">Cada semana nuevas ofertas en productos seleccionados. Consultanos por WhatsApp para los precios del momento.</p>
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20ver%20las%20promociones%20de%20la%20semana"
+          <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20ver%20las%20promociones%20de%20la%20semana"
              target="_blank" rel="noopener"
              class="inline-flex items-center gap-1.5 text-white text-xs font-bold mt-4 transition-colors">
             Ver promociones
@@ -483,7 +604,7 @@ tailwind.config = {
 
 <!-- ═══════════════════ INSTAGRAM STRIP ═══════════════════ -->
 <div class="bg-brand-900 border-t border-brand-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <iconify-icon icon="skill-icons:instagram" width="22" height="22"></iconify-icon>
@@ -502,70 +623,30 @@ tailwind.config = {
   </div>
 </div>
 
-<!-- ═══════════════════ PARA QUIÉN ═══════════════════ -->
-<section class="py-20 bg-stone-50 border-t border-stone-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-xl mx-auto mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 mb-3">¿Para quién trabajamos?</h2>
-      <p class="text-stone-500 text-sm">Atendemos a todo comercio que necesite surtido confiable y atención directa.</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
-          <iconify-icon icon="solar:shop-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
-        </div>
-        <p class="font-semibold text-stone-900 text-sm">Autoservicios</p>
-        <p class="text-stone-400 text-xs mt-1">y almacenes</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
-          <iconify-icon icon="solar:knife-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
-        </div>
-        <p class="font-semibold text-stone-900 text-sm">Fiambrerías</p>
-        <p class="text-stone-400 text-xs mt-1">y rotiserías</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
-          <iconify-icon icon="solar:chef-hat-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
-        </div>
-        <p class="font-semibold text-stone-900 text-sm">Gastronómicos</p>
-        <p class="text-stone-400 text-xs mt-1">restaurantes y bares</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-        <div class="w-12 h-12 bg-brand-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-700 transition-colors">
-          <iconify-icon icon="solar:buildings-bold" width="22" height="22" class="text-brand-400"></iconify-icon>
-        </div>
-        <p class="font-semibold text-stone-900 text-sm">Despensas</p>
-        <p class="text-stone-400 text-xs mt-1">y mercados</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════════ CTA BANNER ═══════════════════ -->
-<section class="py-20 bg-brand-800 relative overflow-hidden">
+<section class="py-14 bg-brand-800 relative overflow-hidden">
   <div class="absolute inset-0 pointer-events-none">
     <div class="absolute top-0 right-0 w-96 h-96 bg-brand-900/60 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-900/50 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4"></div>
   </div>
   <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center">
-    <div class="w-16 h-16 bg-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-      <iconify-icon icon="logos:whatsapp-icon" width="30" height="30"></iconify-icon>
+    <div class="w-12 h-12 bg-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+      <iconify-icon icon="logos:whatsapp-icon" width="24" height="24"></iconify-icon>
     </div>
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pedinos el catálogo<br>y te asesoramos</h2>
-    <p class="text-white/55 text-sm mb-8 max-w-md mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Pedinos el catálogo<br>y te asesoramos</h2>
+    <p class="text-white/55 text-sm mb-6 max-w-md mx-auto">
       Envianos un mensaje por WhatsApp y te mandamos el catálogo actualizado con precios y disponibilidad. Sin compromiso.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20recibir%20el%20cat%C3%A1logo%20de%20productos"
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20recibir%20el%20cat%C3%A1logo%20de%20productos"
          target="_blank" rel="noopener"
-         class="pulse-wa inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-900 text-sm font-bold rounded-xl hover:bg-stone-100 transition-all shadow-xl">
+         class="pulse-wa inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-brand-900 text-sm font-bold rounded-xl hover:bg-stone-100 transition-all shadow-xl">
         <iconify-icon icon="logos:whatsapp-icon" width="20" height="20"></iconify-icon>
         Solicitar catálogo por WhatsApp
       </a>
       <a href="https://www.instagram.com/los.hermanoscba"
          target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/25 text-white text-sm font-bold rounded-xl hover:bg-white/10 transition-all">
+         class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-white/25 text-white text-sm font-bold rounded-xl hover:bg-white/10 transition-all">
         <iconify-icon icon="skill-icons:instagram" width="20" height="20"></iconify-icon>
         Seguinos en Instagram
       </a>
@@ -574,75 +655,87 @@ tailwind.config = {
 </section>
 
 <!-- ═══════════════════ CONTACTO ═══════════════════ -->
-<section id="contacto" class="py-24 lg:py-32 bg-stone-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+<section id="contacto" class="relative py-24 lg:py-32 scroll-mt-20 md:scroll-mt-[180px] overflow-hidden" data-parallax data-parallax-speed="0.25">
+  <div class="bg-img" style="background-image: url('imagenes/img-picada3.jpg');"></div>
+  <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-6 max-w-lg mx-auto w-full">
 
-      <!-- Mapa (60% = 3/5 cols) -->
-      <div class="lg:col-span-3 flex flex-col gap-4">
-        <div class="rounded-2xl overflow-hidden shadow-md border border-stone-200 h-[420px]">
+      <!-- 1. Header -->
+      <div>
+        <div class="gold-bar mb-4"></div>
+        <span class="text-brand-400 font-semibold text-[33px] tracking-widest uppercase mb-3 block">Contacto y cobertura</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-tight">Estamos para atenderte</h2>
+        <p class="text-white/55 text-sm">Respondemos rápido por el canal que prefieras.</p>
+      </div>
+
+      <!-- 2. Mapa -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-2xl overflow-hidden border border-white/15 h-[360px] sm:h-[480px] relative cursor-pointer group">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.8030477520115!2d-64.2227295!3d-31.474603599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a37972b2f101%3A0x64ca4ea0f02b2754!2sDistribuidora%20Los%20hermanos!5e0!3m2!1ses!2sar!4v1776118474350!5m2!1ses!2sar"
-            width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            width="100%" height="100%" style="border:0; pointer-events:none;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
           </iframe>
+          <a href="https://share.google/6R894Yx4G92bMQ6ce"
+             target="_blank" rel="noopener"
+             class="absolute inset-0 z-10"
+             aria-label="Ver ubicación en Google Maps"></a>
+          <div class="absolute bottom-3 right-3 z-20 bg-white/90 rounded-lg px-3 py-1.5 text-xs font-semibold text-brand-700 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <iconify-icon icon="solar:map-point-bold" width="14" height="14"></iconify-icon>
+            Abrir en Maps
+          </div>
         </div>
-        <a href="https://share.google/6R894Yx4G92bMQ6ce" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-stone-200 hover:border-brand-600 text-stone-700 hover:text-brand-700 text-sm font-semibold rounded-xl transition-all shadow-sm self-start">
-          <iconify-icon icon="solar:map-point-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
-          Ver en Google Maps
+        <!-- Address card -->
+        <div class="flex items-center gap-3 bg-white border border-stone-200 rounded-xl px-4 py-3 shadow-sm">
+          <iconify-icon icon="solar:map-point-bold" width="20" height="20" class="text-brand-600 flex-shrink-0"></iconify-icon>
+          <div>
+            <p class="text-stone-900 font-semibold text-sm leading-tight">Distribuidora Los Hermanos</p>
+            <p class="text-stone-500 text-xs">Córdoba capital · Argentina</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Canales -->
+      <div class="flex flex-col gap-3">
+        <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+           target="_blank" rel="noopener"
+           class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+          <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
+            <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs text-stone-400 mb-0.5">WhatsApp · Respuesta rápida</p>
+            <p class="text-brand-600 font-bold text-sm">+54 9 3513 70-1881</p>
+            <span class="text-[10px] font-bold bg-brand-600/10 text-brand-600 px-2 py-0.5 rounded-full">Canal principal</span>
+          </div>
+          <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-stone-400 ml-auto flex-shrink-0"></iconify-icon>
+        </a>
+        <a href="https://www.instagram.com/los.hermanoscba"
+           target="_blank" rel="noopener"
+           class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
+          <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
+            <iconify-icon icon="skill-icons:instagram" width="22" height="22"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs text-stone-400 mb-0.5">Instagram · Seguinos y escribinos</p>
+            <p class="text-brand-600 font-bold text-sm">@los.hermanoscba</p>
+          </div>
+          <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-stone-400 ml-auto flex-shrink-0"></iconify-icon>
         </a>
       </div>
 
-      <!-- Info (40% = 2/5 cols) -->
-      <div class="lg:col-span-2 flex flex-col gap-5">
-
-        <!-- Header -->
-        <div>
-          <div class="gold-bar mb-4"></div>
-          <span class="text-brand-600 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Contacto y cobertura</span>
-          <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-stone-900 mb-2 leading-tight">Estamos para atenderte</h2>
-          <p class="text-stone-500 text-sm">Respondemos rápido por el canal que prefieras.</p>
-        </div>
-
-        <!-- Canales -->
-        <div class="flex flex-col gap-3">
-          <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
-             target="_blank" rel="noopener"
-             class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-            <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
-              <iconify-icon icon="logos:whatsapp-icon" width="22" height="22"></iconify-icon>
-            </div>
-            <div>
-              <p class="text-xs text-stone-400 mb-0.5">WhatsApp · Respuesta rápida</p>
-              <p class="text-brand-600 font-bold text-sm">+54 9 351 219-3827</p>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/los.hermanoscba"
-             target="_blank" rel="noopener"
-             class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-stone-200 hover:border-brand-600 hover:shadow-md transition-all group">
-            <div class="w-10 h-10 bg-brand-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-brand-700 transition-colors">
-              <iconify-icon icon="skill-icons:instagram" width="22" height="22"></iconify-icon>
-            </div>
-            <div>
-              <p class="text-xs text-stone-400 mb-0.5">Instagram · Seguinos y escribinos</p>
-              <p class="text-brand-600 font-bold text-sm">@los.hermanoscba</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- Horario -->
+      <!-- 4. Info cards: horario + cobertura -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
         <div class="bg-white rounded-xl px-5 py-4 border border-stone-200">
           <div class="flex items-center gap-2 mb-3">
             <iconify-icon icon="solar:clock-circle-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
             <span class="font-bold text-stone-900 text-sm">Horario de atención</span>
           </div>
           <div class="space-y-1.5 text-sm text-stone-600">
-            <p><strong class="text-stone-800">Lunes a viernes</strong> — 7:00 a 17:00 hs</p>
-            <p><strong class="text-stone-800">Sábados</strong> — 7:00 a 13:00 hs</p>
+            <p><strong class="text-stone-800">Lunes a viernes</strong> — 9:00 a 13:30 hs & 17:30-21:30 hs</p>
+            <p><strong class="text-stone-800">Domingos</strong> — 9:00 a 13:30 hs</p>
           </div>
         </div>
-
-        <!-- Cobertura -->
         <div class="bg-white rounded-xl px-5 py-4 border border-stone-200">
           <div class="flex items-center gap-2 mb-3">
             <iconify-icon icon="solar:map-point-bold" width="16" height="16" class="text-brand-600"></iconify-icon>
@@ -663,16 +756,16 @@ tailwind.config = {
             </li>
           </ul>
         </div>
-
-        <!-- CTA -->
-        <a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
-           target="_blank" rel="noopener"
-           class="pulse-wa inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-xl transition-all shadow-md">
-          <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
-          Consultar por WhatsApp
-        </a>
-
       </div>
+
+      <!-- 5. CTA full-width -->
+      <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+         target="_blank" rel="noopener"
+         class="pulse-wa flex items-center justify-center gap-2 w-full px-6 py-4 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-xl transition-all shadow-md">
+        <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
+        Consultar por WhatsApp
+      </a>
+
     </div>
   </div>
 </section>
@@ -684,10 +777,13 @@ tailwind.config = {
 
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="logo-badge text-[12px]">Los<br>Hermanos</span>
+          <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
+               alt="Los Hermanos"
+               class="logo-img"
+               style="height:64px;width:auto;">
           <div>
-            <p class="text-white text-sm font-bold leading-tight">Los Hermanos</p>
-            <p class="text-brand-400 text-[10px] tracking-wide">Distribuidora · Córdoba</p>
+            <p class="text-white text-[21px] font-bold leading-tight">Los Hermanos</p>
+            <p class="text-brand-400 text-[15px] tracking-wide">Distribuidora · Córdoba</p>
           </div>
         </div>
         <p class="text-white/40 text-sm leading-relaxed max-w-xs">
@@ -708,10 +804,10 @@ tailwind.config = {
       <div>
         <p class="text-white/35 text-[10px] font-semibold tracking-widest uppercase mb-4">Contacto rápido</p>
         <div class="space-y-3.5">
-          <a href="https://wa.me/5493512193827" target="_blank" rel="noopener"
+          <a href="https://wa.me/5493513701881" target="_blank" rel="noopener"
              class="flex items-center gap-3 text-white/55 hover:text-white transition-colors">
             <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
-            <span class="text-sm">+54 9 351 219-3827</span>
+            <span class="text-sm">+54 9 3513 70-1881</span>
           </a>
           <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
              class="flex items-center gap-3 text-white/55 hover:text-white transition-colors">
@@ -735,7 +831,7 @@ tailwind.config = {
 </footer>
 
 <!-- ═══════════════════ FLOATING WhatsApp ═══════════════════ -->
-<a href="https://wa.me/5493512193827?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+<a id="wa-fab" href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20hacer%20un%20pedido"
    target="_blank" rel="noopener"
    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1fba58] rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-110 group pulse-wa">
   <iconify-icon icon="logos:whatsapp-icon" width="28" height="28"></iconify-icon>
@@ -757,6 +853,53 @@ tailwind.config = {
   window.addEventListener('scroll', () => {
     navbar?.classList.toggle('nav-shadow', window.scrollY > 40);
   });
+
+  // FAB: oculta cuando #contacto es visible (CTA redundante en pantalla)
+  const fab = document.getElementById('wa-fab');
+  const contacto = document.getElementById('contacto');
+  const fabObs = new IntersectionObserver(
+    ([e]) => { fab?.classList.toggle('opacity-0', e.isIntersecting); fab?.classList.toggle('pointer-events-none', e.isIntersecting); },
+    { threshold: 0.15 }
+  );
+  if (contacto) fabObs.observe(contacto);
+
+  // WA button: oculta texto cuando #inicio no es visible
+  const waText = document.getElementById('wa-nav-text');
+  const inicio = document.getElementById('inicio');
+  const waObs = new IntersectionObserver(
+    ([e]) => { waText?.classList.toggle('hidden', !e.isIntersecting); },
+    { threshold: 0.15 }
+  );
+  if (inicio) waObs.observe(inicio);
+
+  // Parallax — nuevo patrón (section[data-parallax] + .bg-img div) y viejo patrón (.parallax-img)
+  (function () {
+    var sections = document.querySelectorAll('section[data-parallax]');
+    var imgs = document.querySelectorAll('.parallax-img[data-parallax]');
+
+    function tick() {
+      var vMid = window.innerHeight / 2;
+      sections.forEach(function (section) {
+        var speed = parseFloat(section.dataset.parallaxSpeed || '0.3');
+        var rect = section.getBoundingClientRect();
+        var sectionMid = rect.top + rect.height / 2;
+        var offset = (vMid - sectionMid) * speed;
+        var bg = section.querySelector('.bg-img');
+        if (bg) bg.style.transform = 'translateY(' + offset + 'px)';
+      });
+      imgs.forEach(function (img) {
+        var section = img.closest('section') || img.parentElement.parentElement;
+        var rect = section.getBoundingClientRect();
+        var ratio = (rect.top + rect.height / 2 - vMid) / (window.innerHeight + rect.height);
+        var offset = Math.round(ratio * 70);
+        img.style.transform = 'scale(1.14) translateY(' + offset + 'px)';
+      });
+    }
+
+    window.addEventListener('scroll', tick, { passive: true });
+    window.addEventListener('resize', tick, { passive: true });
+    tick();
+  })();
 </script>
 </body>
 </html>
