@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"C:/Users/matia/Desktop/ProyectosMatias/web-losHermanos\\\" && git status 2>&1 && git remote -v 2>&1\",\"description\":\"Check git status and remotes\"}",
-  "error": "Exit code 128\nfatal: not a git repository (or any of the parent directories): .git",
-  "timestamp": "2026-04-21T21:09:02.749Z",
-  "retry_count": 1
-}

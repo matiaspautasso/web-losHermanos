@@ -1,5 +1,5 @@
 # web-losHermanos
-
+#falta diseno mobile  
 Sitio web estático para el restaurante/negocio "Los Hermanos".
 
 ## Stack
