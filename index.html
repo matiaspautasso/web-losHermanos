@@ -111,6 +111,9 @@ tailwind.config = {
     /* Hero content: sube 8px — máximo sin que el texto del badge quede detrás del navbar */
     #inicio .relative.z-10 { padding-top: 70px; }
 
+    /* Espacio obligatorio reducido para mobile: la stats bar es más baja */
+    #inicio .section-overlay { padding-bottom: 90px; }
+
     /* Hero text: reduce altura vertical para que los botones quepan sobre la stats bar */
     #inicio h1 { font-size: 2.375rem; }
 
@@ -191,6 +194,11 @@ tailwind.config = {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Espacio obligatorio para que la stats bar del hero no tape el contenido centrado */
+  #inicio .section-overlay {
+    padding-bottom: 210px;
   }
 
 </style>
