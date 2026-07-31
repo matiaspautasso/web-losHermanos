@@ -144,6 +144,19 @@ tailwind.config = {
 
     /* ── CONTACTO mobile ── */
     #contacto { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+
+    /* ── FOOTER mobile: Navegación y Contacto rápido lado a lado, logo ocupa el ancho completo ── */
+    footer { padding-top: 2.25rem; padding-bottom: 1.5rem; }
+    footer .grid.grid-cols-1.md\:grid-cols-3 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1.25rem;
+      padding-bottom: 1.5rem;
+    }
+    footer .grid.grid-cols-1.md\:grid-cols-3 > div:first-child { grid-column: 1 / -1; }
+    footer .mb-4 { margin-bottom: 0.75rem; }
+    footer .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+    footer .space-y-3\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.625rem; }
+    footer .pt-6 { padding-top: 1rem; }
   }
 
   @media (max-width: 639px) {
@@ -203,6 +216,12 @@ tailwind.config = {
     padding-bottom: 210px;
   }
 
+  /* Sección "Sabores que cuentan una historia": -25% de altura respecto al resto de parallax-section */
+  #sabores {
+    height: 75vh;
+    min-height: 450px;
+  }
+
 </style>
 </head>
 
@@ -223,9 +242,9 @@ tailwind.config = {
       <!-- Desktop nav -->
       <div class="hidden md:flex items-center gap-7 ml-10 mr-10">
         <a href="#inicio"    class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Inicio</a>
-        <a href="#productos" class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Productos</a>
-        <a href="#nosotros"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Nosotros</a>
-        <a href="#contacto"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Contacto</a>
+        <a href="#productos-top" class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Productos</a>
+        <a href="#nosotros-top"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Nosotros</a>
+        <a href="#contacto-top"  class="text-[15px] font-semibold text-white/60 hover:text-white tracking-wide uppercase transition-colors">Contacto</a>
       </div>
 
       <!-- CTA + burger -->
@@ -250,9 +269,9 @@ tailwind.config = {
     <!-- Mobile menu -->
     <div id="mobile-nav" class="hidden md:hidden pb-5 pt-4 border-t border-white/10 flex flex-col gap-3">
       <a href="#inicio"    class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Inicio</a>
-      <a href="#productos" class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Productos</a>
-      <a href="#nosotros"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Nosotros</a>
-      <a href="#contacto"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Contacto</a>
+      <a href="#productos-top" class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Productos</a>
+      <a href="#nosotros-top"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Nosotros</a>
+      <a href="#contacto-top"  class="text-sm font-medium text-white/80 hover:text-white py-1 transition-colors">Contacto</a>
       <a href="https://wa.me/5493513701881" target="_blank" rel="noopener"
          class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand-600 text-white text-sm font-bold rounded-xl w-fit transition-all">
         <iconify-icon icon="logos:whatsapp-icon" width="17" height="17"></iconify-icon>
@@ -291,7 +310,7 @@ tailwind.config = {
       </p>
 
       <div class="flex flex-row gap-3 animate-fade-up" style="animation-delay:.4s">
-        <a href="#productos"
+        <a href="#productos-top"
            class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-7 sm:py-3 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
           Ver categorías
           <iconify-icon icon="solar:arrow-down-linear" width="17" height="17"></iconify-icon>
@@ -344,7 +363,7 @@ tailwind.config = {
 </section>
 
 <!-- ═══════════════════ PARALLAX SEPARATOR ═══════════════════ -->
-<section class="parallax-section" data-parallax data-parallax-speed="0.45">
+<section id="sabores" class="parallax-section" data-parallax data-parallax-speed="0.45">
   <div class="bg-img" style="background-image: url('imagenes/fondo-picada.jpg');"></div>
   <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
   <div class="section-overlay">
@@ -367,7 +386,7 @@ tailwind.config = {
 
       <!-- 1. INTRO — mobile: primero / desktop: col 4-5 fila 1 -->
       <div class="order-1 lg:col-start-4 lg:col-span-2 lg:row-start-1">
-        <div class="gold-bar mb-6"></div>
+        <div id="nosotros-top" class="gold-bar mb-6 scroll-mt-[60px] md:scroll-mt-[94px]"></div>
         <span class="text-brand-400 font-semibold text-[40px] tracking-widest uppercase mb-4 block">Quiénes somos</span>
         <h2 class="text-3xl md:text-4xl lg:text-[44px] font-bold tracking-tight text-white mb-6 leading-tight">
           Tradición y surtido<br>para tu negocio
@@ -485,7 +504,7 @@ tailwind.config = {
   <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-2xl mx-auto mb-14">
-      <div class="flex justify-center mb-5"><div class="gold-bar"></div></div>
+      <div id="productos-top" class="flex justify-center mb-5 scroll-mt-[60px] md:scroll-mt-[94px]"><div class="gold-bar"></div></div>
       <span class="text-brand-400 font-semibold text-[11px] tracking-widest uppercase mb-3 block">Lo que ofrecemos</span>
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3">Productos</h2>
       <p class="text-white/55 text-sm">Surtido completo para fiambrerías, autoservicios, despensas y gastronómicos.</p>
@@ -675,7 +694,7 @@ tailwind.config = {
 
       <!-- 1. Header -->
       <div>
-        <div class="gold-bar mb-4"></div>
+        <div id="contacto-top" class="gold-bar mb-4 scroll-mt-[60px] md:scroll-mt-[94px]"></div>
         <span class="text-brand-400 font-semibold text-[33px] tracking-widest uppercase mb-3 block">Contacto y cobertura</span>
         <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2 leading-tight">Estamos para atenderte</h2>
         <p class="text-white/55 text-sm">Respondemos rápido por el canal que prefieras.</p>
@@ -806,9 +825,9 @@ tailwind.config = {
         <p class="text-white/35 text-[10px] font-semibold tracking-widest uppercase mb-4">Navegación</p>
         <ul class="space-y-2.5">
           <li><a href="#inicio"    class="text-white/55 hover:text-white text-sm transition-colors">Inicio</a></li>
-          <li><a href="#productos" class="text-white/55 hover:text-white text-sm transition-colors">Productos</a></li>
-          <li><a href="#nosotros"  class="text-white/55 hover:text-white text-sm transition-colors">Nosotros</a></li>
-          <li><a href="#contacto"  class="text-white/55 hover:text-white text-sm transition-colors">Contacto</a></li>
+          <li><a href="#productos-top" class="text-white/55 hover:text-white text-sm transition-colors">Productos</a></li>
+          <li><a href="#nosotros-top"  class="text-white/55 hover:text-white text-sm transition-colors">Nosotros</a></li>
+          <li><a href="#contacto-top"  class="text-white/55 hover:text-white text-sm transition-colors">Contacto</a></li>
         </ul>
       </div>
 
