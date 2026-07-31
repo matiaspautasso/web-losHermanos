@@ -6,7 +6,10 @@
 <title>Los Hermanos | Distribuidora de Fiambres, Quesos y Lácteos · Córdoba</title>
 <meta name="description" content="Distribuidora mayorista de fiambres, quesos y lácteos en Córdoba. Atención directa, precios mayoristas y reparto diario para autoservicios, fiambrerías y gastronómicos.">
 <!-- FAVICON -->
-<link rel="icon" type="image/png" href="assets/logo%20LosHermanos%20mejorado%28version1%29.png">
+<link rel="icon" href="img-webLoshermanos/imgsLogVerde/favicon_io/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="img-webLoshermanos/imgsLogVerde/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img-webLoshermanos/imgsLogVerde/favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img-webLoshermanos/imgsLogVerde/favicon_io/apple-touch-icon.png">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,10 +55,9 @@ tailwind.config = {
 
   /* Logo img */
   .logo-img {
+    display: block;
     object-fit: contain;
     flex-shrink: 0;
-    /* subtle drop shadow so el logo resalta sobre fondo oscuro */
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.40));
   }
 
   .hero-overlay {
@@ -102,14 +104,14 @@ tailwind.config = {
     /* Hero: svh corrige el problema de address-bar en iOS/Android */
     #inicio { height: 100svh; min-height: 560px; }
 
-    /* Stats bar: padding y tipografía escalados al 80% para reducir altura ~20% */
-    #inicio .absolute.bottom-0 .grid > div { padding-top: 0.7rem; padding-bottom: 0.7rem; }
+    /* Stats bar: padding y tipografía escalados para reducir altura */
+    #inicio .absolute.bottom-0 .grid > div { padding-top: 0.54rem; padding-bottom: 0.54rem; }
     #inicio .absolute.bottom-0 .text-\[14px\] { font-size: 11px; }
     #inicio .absolute.bottom-0 .text-\[10px\] { font-size: 9px; line-height: 1.35; }
     #inicio .absolute.bottom-0 .mt-1 { margin-top: 2px; }
 
     /* Hero content: sube 8px — máximo sin que el texto del badge quede detrás del navbar */
-    #inicio .relative.z-10 { padding-top: 70px; }
+    #inicio .relative.z-10 { padding-top: 71px; }
 
     /* Espacio obligatorio reducido para mobile: la stats bar es más baja */
     #inicio .section-overlay { padding-bottom: 90px; }
@@ -209,13 +211,13 @@ tailwind.config = {
 <!-- ═══════════════════ NAVBAR ═══════════════════ -->
 <nav id="navbar" class="fixed w-full top-0 z-50 bg-brand-900 border-b border-white/10 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-[76px] md:h-[120px]">
+    <div class="flex justify-between items-center h-[60px] md:h-[94px]">
 
       <!-- Logo -->
-      <a href="#inicio" class="flex items-center flex-shrink-0">
-        <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
+      <a href="#inicio" class="flex items-center justify-center flex-shrink-0 leading-none">
+        <img src="img-webLoshermanos/imgsLogVerde/favicon_io/LogoHermEdit.png"
              alt="Los Hermanos"
-             class="logo-img h-[56px] w-[56px] md:h-[84px] md:w-[84px]">
+             class="logo-img h-[42px] sm:h-[46px] md:h-[52px] lg:h-[56px] w-auto">
       </a>
 
       <!-- Desktop nav -->
@@ -265,38 +267,38 @@ tailwind.config = {
   <div class="bg-img" style="background-image: url('imagenes/img-picada3.jpg');"></div>
   <div class="absolute inset-0 bg-brand-950/60" style="z-index: 1;"></div>
   <div class="section-overlay">
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-[58px] md:pt-[125px]">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-[58px] md:pt-[128px]">
 
-      <img src="img-webLoshermanos/logoLosHermFinal.png"
+      <img src="img-webLoshermanos/imgsLogVerde/favicon_io/LogoHermEdit.png"
            alt="Los Hermanos"
-           class="logo-img w-[300px] h-auto sm:w-[380px] md:w-[460px] lg:w-[560px] mb-4 animate-fade-up">
+           class="logo-img w-[176px] sm:w-[203px] md:w-[221px] lg:w-[240px] xl:w-[258px] max-w-[60vw] h-auto object-contain mb-3 animate-fade-up">
 
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-4 sm:mb-5 animate-fade-up" style="animation-delay:.1s">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-3 animate-fade-up" style="animation-delay:.1s">
         <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
         <span class="text-[10px] sm:text-[11px] font-semibold text-white/90 tracking-[0.14em] uppercase">Distribuidora mayorista · Córdoba</span>
       </div>
 
-      <h1 class="text-[38px] sm:text-5xl md:text-[56px] lg:text-[60px] font-bold tracking-tight text-white mb-3 sm:mb-4 max-w-6xl leading-[1.05] animate-fade-up" style="animation-delay:.2s; text-shadow:0 2px 16px rgba(0,0,0,.50);">
+      <h1 class="text-[34px] sm:text-[42px] md:text-[50px] lg:text-[54px] font-bold tracking-tight text-white mb-2 max-w-6xl leading-[1.03] animate-fade-up" style="animation-delay:.2s; text-shadow:0 2px 16px rgba(0,0,0,.50);">
         Fiambres, quesos y lácteos
       </h1>
 
-      <p class="text-xl sm:text-2xl md:text-[32px] font-normal leading-tight text-white/85 max-w-3xl mb-4 animate-fade-up" style="animation-delay:.3s">
+      <p class="text-lg sm:text-xl md:text-[26px] lg:text-[28px] font-normal leading-tight text-white/85 max-w-3xl mb-3 animate-fade-up" style="animation-delay:.3s">
         Abastecimiento mayorista para comercios
       </p>
 
-      <p class="text-sm sm:text-base md:text-lg text-white/65 leading-relaxed mb-6 sm:mb-8 animate-fade-up" style="animation-delay:.4s">
+      <p class="text-sm md:text-base text-white/65 mb-5 animate-fade-up" style="animation-delay:.4s">
         Atención directa · Variedad de productos · Reparto en Córdoba
       </p>
 
       <div class="flex flex-row gap-3 animate-fade-up" style="animation-delay:.4s">
         <a href="#productos"
-           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
+           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-7 sm:py-3 text-sm font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-500 transition-all shadow-lg">
           Ver categorías
           <iconify-icon icon="solar:arrow-down-linear" width="17" height="17"></iconify-icon>
         </a>
         <a href="https://wa.me/5493513701881?text=Hola%2C%20quiero%20hablar%20con%20ventas"
            target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white border border-white/25 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm">
+           class="inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-7 sm:py-3 text-sm font-bold text-white border border-white/25 rounded-xl hover:bg-white/10 transition-all backdrop-blur-sm">
           <iconify-icon icon="logos:whatsapp-icon" width="18" height="18"></iconify-icon>
           Hablar con ventas
         </a>
@@ -304,7 +306,7 @@ tailwind.config = {
 
       <!-- Social handle bajo CTAs -->
       <a href="https://www.instagram.com/los.hermanoscba" target="_blank" rel="noopener"
-         class="hidden sm:inline-flex items-center gap-2 mt-8 text-white/40 hover:text-white/80 transition-colors animate-fade-up"
+         class="hidden sm:inline-flex items-center gap-2 mt-[31px] text-white/40 hover:text-white/80 transition-colors animate-fade-up"
          style="animation-delay:.55s">
         <iconify-icon icon="skill-icons:instagram" width="16" height="16"></iconify-icon>
         <span class="text-xs font-medium tracking-wide">@los.hermanoscba</span>
@@ -319,19 +321,19 @@ tailwind.config = {
     <div class="absolute bottom-0 w-full z-10 bg-brand-800 border-t border-brand-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-brand-700/60">
-          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+          <div class="py-3 px-3 md:py-[22px] md:px-6 flex flex-col items-center justify-start text-center">
             <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Atención a medida</p>
             <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Acompañamiento directo en cada pedido</p>
           </div>
-          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+          <div class="py-3 px-3 md:py-[22px] md:px-6 flex flex-col items-center justify-start text-center">
             <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Calidad seleccionada</p>
             <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Productos frescos y de primera línea</p>
           </div>
-          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+          <div class="py-3 px-3 md:py-[22px] md:px-6 flex flex-col items-center justify-start text-center">
             <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Variedad disponible</p>
             <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Amplio surtido listo para tu negocio</p>
           </div>
-          <div class="py-3 px-3 md:py-7 md:px-6 flex flex-col items-center justify-start text-center">
+          <div class="py-3 px-3 md:py-[22px] md:px-6 flex flex-col items-center justify-start text-center">
             <p class="text-[14px] md:text-lg font-semibold text-white leading-tight md:min-h-[3.5rem] flex items-center justify-center w-full">Reparto confiable</p>
             <p class="text-[10px] md:text-[11px] text-brand-400 tracking-widest uppercase max-w-[160px] md:min-h-[3.75rem] leading-tight mt-1">Entrega rápida y sin intermediarios</p>
           </div>
@@ -787,10 +789,9 @@ tailwind.config = {
 
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
+          <img src="img-webLoshermanos/imgsLogVerde/favicon_io/android-chrome-192x192.png"
                alt="Los Hermanos"
-               class="logo-img"
-               style="height:64px;width:auto;">
+               class="logo-img h-[64px] w-auto">
           <div>
             <p class="text-white text-[21px] font-bold leading-tight">Los Hermanos</p>
             <p class="text-brand-400 text-[15px] tracking-wide">Distribuidora · Córdoba</p>
