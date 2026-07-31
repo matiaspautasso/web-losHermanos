@@ -58,6 +58,32 @@ tailwind.config = {
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.40));
   }
 
+  /* Emblema del logo central del hero */
+  .logo-emblem {
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 42%, rgba(44,90,38,0.55) 0%, rgba(15,31,22,0.80) 100%);
+    border: 5px solid #386B31;
+    box-shadow:
+      inset 0 0 0 2px rgba(232,214,158,0.9),
+      0 10px 28px rgba(0,0,0,0.45);
+  }
+  .logo-emblem::before {
+    content: '';
+    position: absolute;
+    inset: -16px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(74,128,64,0.40) 0%, rgba(74,128,64,0) 72%);
+    z-index: -1;
+  }
+  .logo-emblem .logo-img {
+    width: 74%;
+    height: 74%;
+  }
+
   .hero-overlay {
     background: linear-gradient(135deg,
       rgba(26,51,24,0.94) 0%,
@@ -110,6 +136,9 @@ tailwind.config = {
 
     /* Hero content: sube 8px — máximo sin que el texto del badge quede detrás del navbar */
     #inicio .relative.z-10 { padding-top: 70px; }
+
+    /* Espacio obligatorio reducido para mobile: la stats bar es más baja */
+    #inicio .section-overlay { padding-bottom: 90px; }
 
     /* Hero text: reduce altura vertical para que los botones quepan sobre la stats bar */
     #inicio h1 { font-size: 2.375rem; }
@@ -193,6 +222,11 @@ tailwind.config = {
     justify-content: center;
   }
 
+  /* Espacio obligatorio para que la stats bar del hero no tape el contenido centrado */
+  #inicio .section-overlay {
+    padding-bottom: 210px;
+  }
+
 </style>
 </head>
 
@@ -259,9 +293,11 @@ tailwind.config = {
   <div class="section-overlay">
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center pt-[58px] md:pt-[125px]">
 
-      <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
-           alt="Los Hermanos"
-           class="logo-img h-[140px] w-[140px] sm:h-[170px] sm:w-[170px] md:h-[200px] md:w-[200px] lg:h-[220px] lg:w-[220px] mb-4 animate-fade-up">
+      <div class="logo-emblem h-[140px] w-[140px] sm:h-[170px] sm:w-[170px] md:h-[200px] md:w-[200px] lg:h-[220px] lg:w-[220px] mb-4 animate-fade-up">
+        <img src="assets/logo%20LosHermanos%20mejorado%28version1%29.png"
+             alt="Los Hermanos"
+             class="logo-img">
+      </div>
 
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-500/35 bg-brand-800/50 backdrop-blur-sm mb-4 sm:mb-5 animate-fade-up" style="animation-delay:.1s">
         <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
@@ -272,7 +308,7 @@ tailwind.config = {
         Fiambres, quesos y lácteos
       </h1>
 
-      <p class="text-xl sm:text-2xl md:text-[32px] font-normal leading-tight text-white/85 max-w-3xl mb-4 animate-fade-up" style="animation-delay:.3s">
+      <p class="text-lg sm:text-xl md:text-2xl font-normal leading-tight text-white/85 max-w-3xl mb-3 sm:mb-4 animate-fade-up" style="animation-delay:.3s">
         Abastecimiento mayorista para comercios
       </p>
 
